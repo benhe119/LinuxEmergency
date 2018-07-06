@@ -75,7 +75,7 @@ CPU占比: 0.0%     内存占比: 0.0%
 ...
 
 #  详细信息
-[root@s23 emergency]# python emergency.py -p 28344
+[root@centos emergency]# python emergency.py -p 28344
 ***********************************************************************************************************
 进程ID号: 28344     进程名称: screen     进程用户: emergency     启动时间: 2018-06-22 13:25:30
 工作路径: /home/emergency/
