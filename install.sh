@@ -1,3 +1,4 @@
+# /bin/bash
 pip2 install simplejson
 pip2 install psutil
 pip2 install httplib
