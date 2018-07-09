@@ -1,6 +1,13 @@
 # LinuxEmergency
 ***
-Linux下的应急工具
+Linux下的应急工具，支持CentOS系统和RedHat系统，安装方法：
+```
+git clone https://github.com/cisp/LinuxEmergency.git
+cd LinuxEmergency
+sh ./install.sh
+```
+
+要求root权限
 
 # 查看操作系统信息：
 ***
