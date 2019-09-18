@@ -11,16 +11,11 @@ eventvwr.msc  事件查看器
 
 
 msinfo32  查看环境
-
 tasklist /svc  进程-PID-服务
-
 工具：Process Explorer\Autoruns
 
 
 三、检查启动项、计划任务、服务
-
 taskschd.msc  任务计划
-
 gpedit.msc  组策略
-
 services.msc  服务
