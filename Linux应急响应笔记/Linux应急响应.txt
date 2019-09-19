@@ -1,0 +1,56 @@
+一、账户安全
+w		查看所有用户
+awk -F ":" '$3==0{print $1}' /etc/passwd	查找特权用户
+awk '/\$1|\$6/{print $1}' /etc/shadow		查找可以远程登录的账号信息
+cat /etc/sudoers | grep -v "^#\|^$" | grep "ALL=(ALL)"		查找sudo权限账户
+usermod -L user 禁用帐号
+userdel -r user 删除user用户
+
+二、端口服务
+lsof 
+-i:8080：查看8080端口占用
+ abc.txt：显示开启文件abc.txt的进程
+-c abc：显示abc进程现在打开的文件
+-c -p 1234：列出进程号为1234的进程所打开的文件
+-g gid：显示归属gid的进程情况
++d /usr/local/：显示目录下被进程开启的文件
++D /usr/local/：同上，但是会搜索目录下的目录，时间较长
+-d 4：显示使用fd为4的进程
+-i -U：显示所有打开的端口和UNIX domain文件
+
+netstat -tunlp
+-t (tcp) 仅显示tcp相关选项
+-u (udp)仅显示udp相关选项
+-n 拒绝显示别名，能显示数字的全部转化为数字
+-l 仅列出在Listen(监听)的服务状态
+-p 显示建立相关链接的程序名
+
+chkconfig --list  列出所有的系统服务
+
+三、进程
+ps -aux
+
+四、计划任务
+crontab -l
+-e      (edit user's crontab)
+-l      (list user's crontab)
+-r      (delete user's crontab)
+-i      (prompt before deleting user's crontab)
+
+五、检测rootkit
+安装rkhunter
+--checkall (-c)            :全系统检测，rkhunter的所有检测项目
+--createlogfile            :建立登录档，一般预设放在/var/log/rkhunter.log 
+--cronjob                  :可以使用crontab来执行，不会有颜色显示
+--report-warnings-only     :仅列出警告讯息，正常讯息不列出！
+--skip-application-check   :忽略套件版本检测(如果您已确定系统的套件已patch) 
+--skip-keypress            :忽略按键后继续的举动(程式会持续自动执行) 
+--quiet                    :仅显示有问题的讯息，比--report-warnings-only更少讯息
+--versioncheck             :检测试否有新的版本在伺服器上
+
+
+六、备份
+系统服务备份 chkconfig --list > services.log
+进程备份 ps -ef > ps.log
+监听端口备份 netstat -utnpl > port-listen.log
+系统所有端口情况 netstat -ano > port-all.log
