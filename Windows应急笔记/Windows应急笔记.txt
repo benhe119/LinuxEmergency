@@ -2,18 +2,14 @@ Windows笔记：
 
 
 一、查看用户安全
-
 lusrmgr.msc  查看用户
 eventvwr.msc  事件查看器
---LogParser  分析日志
+LogParser  分析日志
 
 二、查看进程端口
-
-
 msinfo32  查看环境
 tasklist /svc  进程-PID-服务
 工具：Process Explorer\Autoruns
-
 
 三、检查启动项、计划任务、服务
 taskschd.msc  任务计划
